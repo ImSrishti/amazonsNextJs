@@ -74,6 +74,7 @@ export default function Layout({ title, description, children }) {
                 <Link>
                   {cart.cartItems.length > 0 ? (
                     <Badge
+                      overlap="rectangular"
                       color="secondary"
                       badgeContent={cart.cartItems.length}
                     >
