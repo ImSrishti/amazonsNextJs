@@ -42,5 +42,9 @@ function convertDocToObj(doc) {
   return doc;
 }
 
+export const onError = async (err, req, res, next) => {
+  await db.disconnect();
+  res.status(500).send({ message: err.toString() });
+};
 const db = { connect, disconnect, convertDocToObj };
 export default db;
